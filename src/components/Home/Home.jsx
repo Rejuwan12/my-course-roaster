@@ -3,6 +3,8 @@ import './Home.css'
 import { useState} from 'react';
 import Cart from '../Cart/Cart';
 import {  AiOutlineCalendar, AiOutlineStrikethrough} from 'react-icons/ai';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home = () => {
 const [courses, setCourses] = useState([]);
@@ -16,14 +18,13 @@ const [cost, setCost] = useState(0)
         .then(data => setCourses(data))
     },[])
 
-
     const handleClick= (course) => {
         const isExist = selectedCourse.find((item)=> item.course_title == course.course_title);
 
         let count = course.credit;
         
         if(isExist){
-            return alert('already booked')
+            return toast('already booked')
         }
         else{
             selectedCourse.forEach((item) => {
@@ -31,18 +32,16 @@ const [cost, setCost] = useState(0)
             });
             const totalRemaining = 20 - count;
             if(count >20){
-           return alert('Total Credit Hour 20');
+           return toast('Total Credit Hour 20');
         }
            else{
             setCost(count);
             setRemaining(totalRemaining)
             setSelectedCourse([...selectedCourse, course]);
-           }
-            
+           }       
            
         }
 
-       
     }
 console.log(selectedCourse);
 
@@ -64,9 +63,8 @@ console.log(selectedCourse);
                     <p className='price'><AiOutlineStrikethrough/> Price: {course.price}</p>
                     <p className='credit'><AiOutlineCalendar/> Credit: {course.credit}</p>
                 </div>
+                <ToastContainer/>
                 <button onClick={()=>handleClick(course)} className='card-btn'>Select</button>
-        
-            
              </div>
                 ))
             }
