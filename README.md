@@ -1,8 +1,7 @@
-# React + Vite
+#Add at least 3 Project features.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<li> Clicking on the select button on the card will show the card name and credit on the sidebar. </li>
 
-Currently, two official plugins are available:
+<li> If you double click on a button again, the toast will be shown.A button cannot be double clicked</li>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<li> Then no more 20 credits can be taken.Taking more than 20 credits will show toast and remaining credits will decrease from 20 </li>

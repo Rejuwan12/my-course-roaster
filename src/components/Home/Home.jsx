@@ -43,7 +43,7 @@ const [cost, setCost] = useState(0)
         }
 
     }
-console.log(selectedCourse);
+// console.log(selectedCourse);
 
     return (
         
